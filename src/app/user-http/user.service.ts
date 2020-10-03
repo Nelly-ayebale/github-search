@@ -9,12 +9,13 @@ import { User } from '../user';
 export class UserService {
   users: User;
   constructor(private http: HttpClient) {
-    this.users = new User("", "", "", 0, new Date());
+    this.users = new User("", "", "", "", 0, new Date());
   }
   userRequest(data) {
     interface ApiResponse {
       name: string;
       login: string;
+      html_url: string;
       avatar_url: string;
       public_repos: number;
       created_at: Date;
@@ -26,6 +27,7 @@ export class UserService {
         .toPromise().then(response => {
           this.users.name = response.name;
           this.users.login = response.login;
+          this.users.html_url = response.html_url;
           this.users.avatar_url = response.avatar_url;
           this.users.public_repos = response.public_repos;
           this.users.created_at = response.created_at;
