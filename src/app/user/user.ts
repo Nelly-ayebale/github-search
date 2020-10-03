@@ -1,6 +1,3 @@
 export class User {
-    id: number;
-    login: string;
-    avatar: string;
-    url: string;
+    constructor(public id: number, public login: string, public avatar: string, public url: string) { }
 }
