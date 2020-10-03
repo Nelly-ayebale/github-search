@@ -1,9 +1,7 @@
-<div class="container-fluid">
-    <div class="row">
-        <form class="form-inline" (ngSubmit)='search()' #githubForm='ngForm'>
-            <input class="form-control mt-4 ml-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success mt-4 ml-3" type="submit">Search</button>
-        </form>
+<form (ngSubmit)='search(searchForm)' #searchForm='ngModel'>
+    <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Search Usename"
+            [(ngModel)]='searchUsername.username' #username='ngModel'>
+        <button type="submit" class="btn btn-primary">Search</button>
     </div>
-
-</div>
+</form>
