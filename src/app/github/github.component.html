@@ -12,7 +12,8 @@
         <div class="card mb-4  bg-dark col-md-7" style="width: 18rem;">
             <div class="card-body text-white">
                 <h5 class="card-title"></h5>
-                <h4 class="card-title mb-2 subtitle">Github Username : {{users.login}}</h4>
+                <h4 class="card-title mb-2 subtitle">Github Username : <a href="{{users.html_url}}">{{users.login}}</a>
+                </h4>
                 <h4 class="card-title mb-2 subtitle">Repositories: {{users.public_repos}}</h4>
                 <h4 class="card-title mb-2 subtitle">Date Created: {{users.created_at | date}}</h4>
             </div>
