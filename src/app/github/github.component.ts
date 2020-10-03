@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user/user';
 import { UserService } from '../user-http/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-github',
@@ -8,14 +8,22 @@ import { UserService } from '../user-http/user.service';
   styleUrls: ['./github.component.css']
 })
 export class GithubComponent implements OnInit {
-  user: User;
+  public user = 'Nelly-ayebale';
 
-  constructor(private userService: UserService) { }
+  users: User;
+
+  finduserRequest(username) {
+
+    this.user = username;
+    this.ngOnInit();
+  }
+  constructor(public userServiceRequest: UserService) { }
 
 
   ngOnInit(): void {
-    this.userService.userRequest()
-    this.user = this.userService.user
+    this.userServiceRequest.userRequest(this.user);
+    this.users = this.userServiceRequest.users;
+
   }
 
 

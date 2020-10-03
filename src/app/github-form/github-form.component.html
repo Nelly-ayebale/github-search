@@ -1,6 +1,6 @@
-<form (ngSubmit)='search(searchForm)' #searchForm='ngModel'>
+<form (ngSubmit)='search(searchForm)' #searchForm='ngForm'>
     <div class="form-group">
-        <input type="text" class="form-control" name="username" placeholder="Search Usename"
+        <input type="text" class="form-control mt-5" name="username" placeholder="Search Username"
             [(ngModel)]='searchUsername.username' #username='ngModel'>
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
