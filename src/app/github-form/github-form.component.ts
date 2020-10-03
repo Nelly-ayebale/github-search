@@ -7,13 +7,14 @@ import { User } from '../user/user';
   styleUrls: ['./github-form.component.css']
 })
 export class GithubFormComponent implements OnInit {
-  newSearch = new User(0, "", "", "")
+  searchUsername = new User("")
   constructor() { }
 
-  @Output() searchTerm = new EventEmitter<User>();
+  @Output() searching = new EventEmitter<User>();
 
-  search() {
-    this.searchTerm.emit(this.newSearch)
+  search(term) {
+    this.searching.emit(term.value.username);
+    term.reset();
 
   }
   ngOnInit(): void {
