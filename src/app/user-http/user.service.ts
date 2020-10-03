@@ -1,38 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { User } from '../user/user';
+import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  user: User;
+  users: User;
   constructor(private http: HttpClient) {
-    this.user = new User(0, "", "", "");
+    this.users = new User("", "", "", 0);
   }
-  userRequest() {
+  userRequest(data) {
     interface ApiResponse {
-      id: number;
+      name: string;
       login: string;
       avatar: string;
-      url: string;
+      public_repos: number;
+
+
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl)
+      this.http.get<ApiResponse>(`https://api.github.com/users/` + data + `?access_token=` + environment.apiKey)
         .toPromise().then(response => {
-          this.user.id = response.id
-          this.user.login = response.login
-          this.user.avatar = response.avatar
-          this.user.url = response.url
+          this.users.name = response.name;
+          this.users.login = response.login;
+          this.users.avatar = response.avatar;
+          this.users.public_repos = response.public_repos;
 
           resolve()
         },
           error => {
-            this.user.id = 0
-            this.user.login = "Bad Credentials"
-            this.user.avatar = "Bad Credentials"
-            this.user.url = "Bad Credentials"
+            this.users.name = "Bad Credentiials"
+            this.users.login = "Bad Credentials"
+            this.users.avatar = "Bad Credentials"
+            this.users.public_repos = 0
 
             reject(error)
 
