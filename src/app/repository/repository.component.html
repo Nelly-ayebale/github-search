@@ -1,1 +1,22 @@
-<p>repository works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <app-github-form (searching)='searchForRepositories($event)'></app-github-form>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor='let repository of repositoryRequest.searchForRepository'>
+                <h4>
+                    <a style="text-align: center" href="{{repository.html_url}} ">{{repository.name}}</a>
+                </h4>
+                <p> Repository Owner:
+                    <a href="{{repository.owner.html_url}}">{{repository.owner.login}}</a>
+                </p>
+                <p>Date Created : {{repository.created_at|date}}</p>
+                <p>Description : {{repository.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

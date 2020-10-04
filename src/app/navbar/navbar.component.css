@@ -1,3 +1,9 @@
 .nav{
     font-weight: bolder;
 }
+#firstlink:hover{
+    text-decoration: underline;
+}
+#secondlink:hover{
+    text-decoration: underline;
+}

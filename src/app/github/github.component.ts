@@ -10,7 +10,7 @@ import { Repository } from '../repository';
 })
 export class GithubComponent implements OnInit {
   public user = 'Nelly-ayebale';
-
+  public searchForRepository: string;
   users: User;
   repositories: Repository;
 
@@ -28,6 +28,8 @@ export class GithubComponent implements OnInit {
     this.repoServiceRequest.repoRequest(this.user);
     console.log(this.repoServiceRequest);
   }
-
+  searchForRepositories() {
+    this.searchForRepository = ""
+  }
 
 }

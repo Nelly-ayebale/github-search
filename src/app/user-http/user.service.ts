@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { User } from '../user';
 import { Repository } from '../repository';
-import { error } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class UserService {
   users: User;
   repositories: Repository;
   thisrepository: any;
+  searchForRepository: any;
 
   constructor(private http: HttpClient) {
     this.users = new User("", "", "", "", 0, new Date());
@@ -60,6 +61,7 @@ export class UserService {
       languages_url: string;
       collaborators_url: string;
       created_at: Date;
+
     }
     let newPromise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(`https://api.github.com/users/` + user + `/repos?access_token` + environment.apiKey)
@@ -74,6 +76,20 @@ export class UserService {
           })
     })
     return newPromise;
+  }
+
+  searchRepoRequest(data) {
+    interface ApiResponse {
+      repos: any;
+    }
+
+    let newest = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>(`htttps://api.github.com/search/repositories?q=` + data + environment.apiKey)
+
+        .toPromise().then(response => {
+          this.searchForRepository = response.repos;
+        })
+    })
   }
 }
 
