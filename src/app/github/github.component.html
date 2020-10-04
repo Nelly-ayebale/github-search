@@ -24,3 +24,19 @@
 
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mt-4" style="font-weight: bolder; text-decoration: underline;">YOUR REPOSITORIES:
+            </h1>
+            <div *ngFor='let repository of repoServiceRequest.thisrepository'>
+                <div class="border mt-4">
+                    <h3 style="font-weight: bolder; text-decoration: underline;" class="text-center mt-4 mb-4">
+                        {{repository.name}}</h3>
+                    <h4 class="text-center">{{repository.description}}</h4>
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
