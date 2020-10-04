@@ -10,10 +10,13 @@ import { UserService } from '../user-http/user.service';
 export class RepositoryComponent implements OnInit {
   repository: Repository;
   public searchForRepository: string;
-
+  getSearch() {
+    this.repositoryRequest.searchRepoRequest(this.searchForRepository)
+  }
 
   searchForRepositories() {
     this.searchForRepository = '';
+    this.getSearch();
   }
 
   constructor(public repositoryRequest: UserService) { }

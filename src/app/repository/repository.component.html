@@ -9,10 +9,10 @@
         <div class="col-md-12">
             <div *ngFor='let repository of repositoryRequest.searchForRepository'>
                 <h4>
-                    <a style="text-align: center" href="{{repository.html_url}} ">{{repository.name}}</a>
+                    {{repository.name}}
                 </h4>
                 <p> Repository Owner:
-                    <a href="{{repository.owner.html_url}}">{{repository.owner.login}}</a>
+                    {{repository.owner.login}}
                 </p>
                 <p>Date Created : {{repository.created_at|date}}</p>
                 <p>Description : {{repository.description}}</p>
