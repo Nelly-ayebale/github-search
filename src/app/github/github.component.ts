@@ -26,7 +26,7 @@ export class GithubComponent implements OnInit {
     this.userServiceRequest.userRequest(this.user);
     this.users = this.userServiceRequest.users;
     this.repoServiceRequest.repoRequest(this.user);
-    console.log(this.repoServiceRequest);
+
   }
   searchForRepositories() {
     this.searchForRepository = ""

@@ -9,6 +9,7 @@ import { GithubComponent } from './github/github.component';
 import { GithubFormComponent } from './github-form/github-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { AppColorDirective } from './app-color.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RepositoryComponent } from './repository/repository.component';
     GithubComponent,
     GithubFormComponent,
     NavbarComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    AppColorDirective
   ],
   imports: [
     BrowserModule,
