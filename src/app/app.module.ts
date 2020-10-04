@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { AppColorDirective } from './app-color.directive';
 import { AboutComponent } from './about/about.component';
+import { DateCountPipe } from './date-count.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     RepositoryComponent,
     AppColorDirective,
-    AboutComponent
+    AboutComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
