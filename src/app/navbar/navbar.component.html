@@ -1,16 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
-    <a class="navbar-brand ml-3 text-white nav" href="#">GITHUB SEARCH</a>
+    <a class="navbar-brand ml-3 text-white nav" routerLink="users">GITHUB SEARCH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link text-white border" id="firstlink" style="font-weight: bold; cursor: pointer;">User
+            <a class="nav-link text-white border" id="firstlink" style="font-weight: bold; cursor: pointer;"
+                routerLink="users" routerLinkActive='active'>User
                 Page</a>
-            <a class="nav-link text-white border ml-3" id="secondlink"
-                style="font-weight: bold;cursor: pointer;">Repositories</a>
+            <a class="nav-link text-white border ml-3" id="secondlink" style="font-weight: bold;cursor: pointer;"
+                routerLink="repositories" routerLinkActive='active'>Repositories</a>
 
         </div>
     </div>
