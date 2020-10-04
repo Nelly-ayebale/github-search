@@ -15,6 +15,7 @@ import { DateCountPipe } from './date-count.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { DateCountPipe } from './date-count.pipe';
     AppColorDirective,
     AboutComponent,
     DateCountPipe
+
   ],
   imports: [
     BrowserModule,
