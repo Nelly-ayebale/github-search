@@ -10,9 +10,7 @@ import { UserService } from '../user-http/user.service';
 export class RepositoryComponent implements OnInit {
   repository: Repository;
   public searchForRepository: string;
-  getSearch() {
-    this.repositoryRequest.searchRepoRequest(this.searchForRepository)
-  }
+
 
   searchForRepositories() {
     this.searchForRepository = '';
@@ -25,4 +23,7 @@ export class RepositoryComponent implements OnInit {
     this.repositoryRequest.searchRepoRequest(this.searchForRepository);
   }
 
+  getSearch() {
+    this.repositoryRequest.searchRepoRequest(this.searchForRepository)
+  }
 }
