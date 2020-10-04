@@ -5,16 +5,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5 image-end mb-4">
+        <div class="col-md-6 mb-4">
             <img src="{{users.avatar_url}}">
         </div>
 
-        <div class="card mb-4  bg-dark col-md-7" style="width: 18rem;">
+        <div class="card mb-4  bg-dark col-md-6" style="width: 18rem;">
             <div class="card-body text-white">
                 <h5 class="card-title"></h5>
                 <h4 class="card-title mb-2 subtitle">Github Username : <a href="{{users.html_url}}">{{users.login}}</a>
                 </h4>
-                <p class="border text-center">Click your username to be directed to your page.</p>
+                <p class="border text-center">Click your username to be directed to your original page.</p>
                 <h4 class="card-title mb-2 subtitle">Repositories: {{users.public_repos}}</h4>
                 <h4 class="card-title mb-2 subtitle">Date Created: {{users.created_at | date}}</h4>
 
